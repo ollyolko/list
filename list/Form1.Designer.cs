@@ -1,11 +1,14 @@
-﻿namespace list
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace list
 {
     partial class commander
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,20 +31,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("tyjty", System.Windows.Forms.HorizontalAlignment.Left);
-            this.listViewPanel1 = new System.Windows.Forms.ListView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnC = new System.Windows.Forms.Button();
-            this.btnD = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tsPanel2 = new System.Windows.Forms.ToolStrip();
-            this.listViewPannel2 = new System.Windows.Forms.ListView();
-            this.columnHeader2Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2Size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.currentDirLabel2 = new System.Windows.Forms.Label();
+            this.listViewPanel2 = new System.Windows.Forms.ListView();
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,72 +49,32 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Copy = new System.Windows.Forms.Button();
+            this.newFolder = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.Button();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.tsPanel1 = new System.Windows.Forms.ToolStrip();
+            this.currentDirLabel1 = new System.Windows.Forms.Label();
+            this.listViewPanel1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listViewPanel1
-            // 
-            this.listViewPanel1.Location = new System.Drawing.Point(12, 94);
-            this.listViewPanel1.Name = "listViewPanel1";
-            this.listViewPanel1.Size = new System.Drawing.Size(260, 549);
-            this.listViewPanel1.TabIndex = 0;
-            this.listViewPanel1.UseCompatibleStateImageBehavior = false;
-            this.listViewPanel1.View = System.Windows.Forms.View.List;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 39);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(40, 23);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // textBox
-            // 
-            this.textBox.Location = new System.Drawing.Point(13, 68);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(189, 20);
-            this.textBox.TabIndex = 2;
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(58, 39);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(32, 23);
-            this.btnDel.TabIndex = 3;
-            this.btnDel.Text = "delete";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnC
-            // 
-            this.btnC.Location = new System.Drawing.Point(96, 39);
-            this.btnC.Name = "btnC";
-            this.btnC.Size = new System.Drawing.Size(53, 23);
-            this.btnC.TabIndex = 4;
-            this.btnC.Text = "c:";
-            this.btnC.UseVisualStyleBackColor = true;
-            this.btnC.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnD
-            // 
-            this.btnD.Location = new System.Drawing.Point(157, 39);
-            this.btnD.Name = "btnD";
-            this.btnD.Size = new System.Drawing.Size(45, 23);
-            this.btnD.TabIndex = 5;
-            this.btnD.Text = "d:";
-            this.btnD.UseVisualStyleBackColor = true;
-            this.btnD.Click += new System.EventHandler(this.button3_Click);
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(294, 27);
+            this.splitContainer1.Location = new System.Drawing.Point(372, 27);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -128,8 +84,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.listViewPannel2);
-            this.splitContainer1.Size = new System.Drawing.Size(353, 616);
+            this.splitContainer1.Panel2.Controls.Add(this.currentDirLabel2);
+            this.splitContainer1.Panel2.Controls.Add(this.listViewPanel2);
+            this.splitContainer1.Size = new System.Drawing.Size(366, 582);
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 6;
             // 
@@ -137,43 +94,47 @@
             // 
             this.tsPanel2.Location = new System.Drawing.Point(0, 0);
             this.tsPanel2.Name = "tsPanel2";
-            this.tsPanel2.Size = new System.Drawing.Size(353, 25);
+            this.tsPanel2.Size = new System.Drawing.Size(366, 25);
             this.tsPanel2.TabIndex = 0;
             this.tsPanel2.Text = "toolStrip1";
             // 
-            // listViewPannel2
+            // currentDirLabel2
             // 
-            this.listViewPannel2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2Name,
-            this.columnHeader2Size});
-            this.listViewPannel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewPannel2.GridLines = true;
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "listViewGroup1";
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "listViewGroup2";
-            listViewGroup3.Header = "tyjty";
-            listViewGroup3.Name = "listViewGroup3";
-            this.listViewPannel2.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3});
-            this.listViewPannel2.Location = new System.Drawing.Point(0, 0);
-            this.listViewPannel2.Name = "listViewPannel2";
-            this.listViewPannel2.Size = new System.Drawing.Size(353, 587);
-            this.listViewPannel2.TabIndex = 0;
-            this.listViewPannel2.UseCompatibleStateImageBehavior = false;
-            this.listViewPannel2.View = System.Windows.Forms.View.Details;
+            this.currentDirLabel2.AutoSize = true;
+            this.currentDirLabel2.Location = new System.Drawing.Point(10, 5);
+            this.currentDirLabel2.Name = "currentDirLabel2";
+            this.currentDirLabel2.Size = new System.Drawing.Size(0, 13);
+            this.currentDirLabel2.TabIndex = 1;
             // 
-            // columnHeader2Name
+            // listViewPanel2
             // 
-            this.columnHeader2Name.Tag = "rfg";
-            this.columnHeader2Name.Text = "name";
-            this.columnHeader2Name.Width = 288;
+            this.listViewPanel2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.name,
+            this.size,
+            this.date});
+            this.listViewPanel2.FullRowSelect = true;
+            this.listViewPanel2.GridLines = true;
+            this.listViewPanel2.Location = new System.Drawing.Point(0, 21);
+            this.listViewPanel2.Name = "listViewPanel2";
+            this.listViewPanel2.Size = new System.Drawing.Size(366, 532);
+            this.listViewPanel2.TabIndex = 0;
+            this.listViewPanel2.UseCompatibleStateImageBehavior = false;
+            this.listViewPanel2.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader2Size
+            // name
             // 
-            this.columnHeader2Size.Text = "size";
+            this.name.Text = "name";
+            this.name.Width = 228;
+            // 
+            // size
+            // 
+            this.size.Text = "size";
+            this.size.Width = 47;
+            // 
+            // date
+            // 
+            this.date.Text = "date";
+            this.date.Width = 57;
             // 
             // menuStrip1
             // 
@@ -185,7 +146,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(659, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(750, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -256,18 +217,130 @@
             this.toolStripMenuItem2.Size = new System.Drawing.Size(79, 22);
             this.toolStripMenuItem2.Text = "?";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 638);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "F3 view";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // Copy
+            // 
+            this.Copy.Location = new System.Drawing.Point(136, 638);
+            this.Copy.Name = "Copy";
+            this.Copy.Size = new System.Drawing.Size(117, 23);
+            this.Copy.TabIndex = 9;
+            this.Copy.Text = "Copy";
+            this.Copy.UseVisualStyleBackColor = true;
+            // 
+            // newFolder
+            // 
+            this.newFolder.Location = new System.Drawing.Point(259, 638);
+            this.newFolder.Name = "newFolder";
+            this.newFolder.Size = new System.Drawing.Size(117, 23);
+            this.newFolder.TabIndex = 10;
+            this.newFolder.Text = "NewFolder";
+            this.newFolder.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(382, 638);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(117, 23);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // exit
+            // 
+            this.exit.BackColor = System.Drawing.Color.Crimson;
+            this.exit.Location = new System.Drawing.Point(621, 638);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(117, 23);
+            this.exit.TabIndex = 12;
+            this.exit.Text = "exit";
+            this.exit.UseVisualStyleBackColor = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Location = new System.Drawing.Point(13, 27);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.tsPanel1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.currentDirLabel1);
+            this.splitContainer2.Panel2.Controls.Add(this.listViewPanel1);
+            this.splitContainer2.Size = new System.Drawing.Size(353, 582);
+            this.splitContainer2.SplitterDistance = 26;
+            this.splitContainer2.TabIndex = 13;
+            // 
+            // tsPanel1
+            // 
+            this.tsPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tsPanel1.Name = "tsPanel1";
+            this.tsPanel1.Size = new System.Drawing.Size(353, 25);
+            this.tsPanel1.TabIndex = 1;
+            this.tsPanel1.Text = "toolStrip1";
+            // 
+            // currentDirLabel1
+            // 
+            this.currentDirLabel1.AutoSize = true;
+            this.currentDirLabel1.Location = new System.Drawing.Point(4, 4);
+            this.currentDirLabel1.MinimumSize = new System.Drawing.Size(10, 2);
+            this.currentDirLabel1.Name = "currentDirLabel1";
+            this.currentDirLabel1.Size = new System.Drawing.Size(10, 13);
+            this.currentDirLabel1.TabIndex = 2;
+            // 
+            // listViewPanel1
+            // 
+            this.listViewPanel1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listViewPanel1.FullRowSelect = true;
+            this.listViewPanel1.GridLines = true;
+            this.listViewPanel1.Location = new System.Drawing.Point(0, 20);
+            this.listViewPanel1.Name = "listViewPanel1";
+            this.listViewPanel1.Size = new System.Drawing.Size(350, 532);
+            this.listViewPanel1.TabIndex = 1;
+            this.listViewPanel1.UseCompatibleStateImageBehavior = false;
+            this.listViewPanel1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "name";
+            this.columnHeader1.Width = 201;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "size";
+            this.columnHeader2.Width = 58;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "date";
+            this.columnHeader3.Width = 58;
+            // 
             // commander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 650);
+            this.ClientSize = new System.Drawing.Size(750, 663);
+            this.Controls.Add(this.splitContainer2);
+            this.Controls.Add(this.exit);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.newFolder);
+            this.Controls.Add(this.Copy);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.btnD);
-            this.Controls.Add(this.btnC);
-            this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.textBox);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.listViewPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "commander";
@@ -276,39 +349,53 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listViewPanel1;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnC;
-        private System.Windows.Forms.Button btnD;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem commandToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem networkingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip tsPanel2;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ListView listViewPannel2;
-        private System.Windows.Forms.ColumnHeader columnHeader2Name;
-        private System.Windows.Forms.ColumnHeader columnHeader2Size;
+        private SplitContainer splitContainer1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem commandToolStripMenuItem;
+        private ToolStripMenuItem networkingToolStripMenuItem;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStrip tsPanel2;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem newToolStripMenuItem;
+        private ToolStripMenuItem printToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem2;
+        private Button button1;
+        private Button Copy;
+        private Button newFolder;
+        private Button button4;
+        private Button exit;
+        private ListView listViewPanel2;
+        private ColumnHeader name;
+        private ColumnHeader size;
+        private ColumnHeader date;
+        private SplitContainer splitContainer2;
+        private ToolStrip tsPanel1;
+        private ListView listViewPanel1;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private Label currentDirLabel2;
+        private Label currentDirLabel1;
     }
 }
 

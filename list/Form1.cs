@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace list
@@ -18,64 +13,86 @@ namespace list
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        public void show(string str, Label label, ListView listwiew)
         {
-            listViewPanel1.Items.Add(textBox.Text);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            foreach (ListViewItem currentItem in listViewPanel1.SelectedItems)
-            {
-                listViewPanel1.Items.Remove(currentItem);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            show("c:\\");
-        }
-
-        public void show(string str)
-        {
-            listViewPanel1.Clear();
+            label.Text = str;
+            listwiew.Items.Clear();
             var folder = Directory.GetDirectories(str);
             foreach (var fol in folder)
             {
-                listViewPanel1.Items.Add(fol);
+                DirectoryInfo dir=new DirectoryInfo(fol);
+                listwiew.Items.Add(new ListViewItem(new []{dir.Name,"<DIR>", dir.CreationTime.ToShortDateString()}));
             }
 
             var file = Directory.GetFiles(str);
             foreach (var ste in file)
             {
-                listViewPanel1.Items.Add(ste);
+                FileInfo ff = new FileInfo(ste);
+                listwiew.Items.Add(new ListViewItem(new []{ff.Name, ff.Length.ToString(), ff.CreationTime.ToShortDateString() }));
             }
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            show("d:\\");
-        }
+  
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            show("C:\\",currentDirLabel1,listViewPanel1); show("C:\\",currentDirLabel2,listViewPanel2);
             var drivers = Environment.GetLogicalDrives();
             foreach (var item in drivers)
             {
-                
                 ToolStripButton items = new ToolStripButton();
-                items.Text = item.ToString();
+                items.Text = item;
                 items.DisplayStyle=ToolStripItemDisplayStyle.ImageAndText;
                 items.Image =Image.FromFile("..\\..\\hard.ico");
-                //items.Click += toolStripBotton_CLick();
-                items.Click+=new EventHandler(toolStripBotton_CLick);
+                items.Click += toolStripBotton_CLick;
                 tsPanel2.Items.Add(items);
+            }
+
+            foreach (var item in drivers)
+            {
+                ToolStripButton items = new ToolStripButton();
+                items.Text = item;
+                items.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                items.Image = Image.FromFile("..\\..\\hard.ico");
+                items.Click += toolStripBotton_CLickF;
+                tsPanel1.Items.Add(items);
             }
         }
 
-        private void toolStripBotton_CLick(object sender, EventArgs e)
+        void toolStripBotton_CLick(object sender, EventArgs e)
         {
-            show("d:\\");
+            DriveInfo iii = new DriveInfo(sender.ToString());
+            if (iii.IsReady)
+            {
+                show(sender.ToString(),currentDirLabel2,listViewPanel2);
+            }
+            else
+            {
+                MessageBox.Show("drive "+sender.ToString()+" exist","error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
+        }
+
+        void toolStripBotton_CLickF(object sender, EventArgs e)
+        {
+            DriveInfo iii = new DriveInfo(sender.ToString());
+            if (iii.IsReady)
+            {
+                show(sender.ToString(), currentDirLabel1, listViewPanel1);
+            }
+            else
+            {
+                MessageBox.Show("drive " + sender.ToString() + " exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
+
+
+//Можеш просто вішати їм один івент, а в обробнику дивись на текст в сендері
+//Тільки сендер приведи до тулстріпбаттон
