@@ -20,7 +20,7 @@ namespace list
             var folder = Directory.GetDirectories(str);
             foreach (var fol in folder)
             {
-                DirectoryInfo dir=new DirectoryInfo(fol);
+                DirectoryInfo dir = new DirectoryInfo(fol);
                 listwiew.Items.Add(new ListViewItem(new []{dir.Name,"<DIR>", dir.CreationTime.ToShortDateString()}));
             }
 
@@ -28,14 +28,20 @@ namespace list
             foreach (var ste in file)
             {
                 FileInfo ff = new FileInfo(ste);
-                listwiew.Items.Add(new ListViewItem(new []{ff.Name, ff.Length.ToString(), ff.CreationTime.ToShortDateString() }));
+                //listwiew.Items.Add(new ListViewItem(new []{ff.Name, ff.Length.ToString(), ff.CreationTime.ToShortDateString() }));
+                ListViewItem item =new ListViewItem();
+                item.Text = "ddd";
+                item.SubItems.Add("dddere");
+                item.SubItems.Add("dddere");
+                
             }
         }
   
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            show("C:\\",currentDirLabel1,listViewPanel1); show("C:\\",currentDirLabel2,listViewPanel2);
+            show("C:\\",currentDirLabel1,listViewPanel1);
+            show("C:\\",currentDirLabel2,listViewPanel2);
             var drivers = Environment.GetLogicalDrives();
             foreach (var item in drivers)
             {
@@ -69,7 +75,6 @@ namespace list
             {
                 MessageBox.Show("drive "+sender.ToString()+" exist","error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            
         }
 
         void toolStripBotton_CLickF(object sender, EventArgs e)
@@ -83,7 +88,6 @@ namespace list
             {
                 MessageBox.Show("drive " + sender.ToString() + " exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -92,7 +96,3 @@ namespace list
         }
     }
 }
-
-
-//Можеш просто вішати їм один івент, а в обробнику дивись на текст в сендері
-//Тільки сендер приведи до тулстріпбаттон
